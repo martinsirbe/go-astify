@@ -11,7 +11,7 @@ import (
 	"github.com/martinsirbe/go-astify/json"
 )
 
-func TestCorrectlyParsedJSONInputIntoAST(t *testing.T) {
+func TestCorrectlyParsedJSONInputToAST(t *testing.T) {
 	jsonFile, err := os.Open("../test_data/test.json")
 	defer func() {
 		assert.Nil(t, jsonFile.Close())

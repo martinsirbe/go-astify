@@ -6,7 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// Parser parses the given JSON input into an AST
+// Parser parses the given JSON input to an AST
 type Parser struct {
 	tokenizer *Tokenizer
 }
@@ -18,7 +18,7 @@ func NewParser(tokenizer *Tokenizer) *Parser {
 	}
 }
 
-// Parse used to parse the given JSON input (provided via tokenizer) into AST
+// Parse used to parse the given JSON input (provided via tokenizer) to AST
 func (p *Parser) Parse() (Node, error) {
 	token := p.tokenizer.GetToken()
 	switch token.Type {

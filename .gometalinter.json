@@ -1,0 +1,15 @@
+{
+  "Enable": [
+    "gofmt",
+    "golint",
+    "goimports",
+    "ineffassign",
+    "goconst",
+    "unparam",
+    "unconvert",
+    "misspell",
+    "errcheck",
+    "staticcheck",
+    "deadcode"
+  ]
+}
