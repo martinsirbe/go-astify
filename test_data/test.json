@@ -1,0 +1,27 @@
+{
+  "test_object": {
+    "test_string": "hello world",
+    "test_integer": 1234567890,
+    "test_boolean": true
+  },
+  "test_string": "hello world",
+  "test_integer": 1234567890,
+  "test_boolean": true,
+  "test_string_array": [
+    "test 1",
+    "test 2",
+    "test 3"
+  ],
+  "test_object_array": [
+    {
+      "test_string": "hello world 1",
+      "test_integer": 123,
+      "test_boolean": false
+    },
+    {
+      "test_string": "hello world 2",
+      "test_integer": 456,
+      "test_boolean": true
+    }
+  ]
+}
