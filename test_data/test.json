@@ -24,5 +24,6 @@
       "test_boolean": true
     }
   ],
-  "test_empty_array": []
+  "test_empty_array": [],
+  "test_empty_object": {}
 }
