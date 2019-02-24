@@ -23,5 +23,6 @@
       "test_integer": 456,
       "test_boolean": true
     }
-  ]
+  ],
+  "test_empty_array": []
 }

@@ -73,6 +73,7 @@ func (p *Parser) getArray() (Node, error) {
 	token := p.tokenizer.PeekToken()
 
 	if token.Type == RSBRACKET {
+		p.tokenizer.GetToken()
 		return Array{Elements: nil}, nil
 	}
 
