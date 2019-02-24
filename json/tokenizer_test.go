@@ -383,6 +383,22 @@ func expectedTokens() []json.Token {
 			Type:  json.RCBRACKET,
 		},
 		{
+			Value: ",",
+			Type:  json.COMMA,
+		},
+		{
+			Value: "test_null",
+			Type:  json.STRING,
+		},
+		{
+			Value: ":",
+			Type:  json.COLON,
+		},
+		{
+			Value: "",
+			Type:  json.NULL,
+		},
+		{
 			Value: "}",
 			Type:  json.RCBRACKET,
 		},

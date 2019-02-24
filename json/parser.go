@@ -22,6 +22,8 @@ func NewParser(tokenizer *Tokenizer) *Parser {
 func (p *Parser) Parse() (Node, error) {
 	token := p.tokenizer.GetToken()
 	switch token.Type {
+	case NULL:
+		return Null{}, nil
 	case STRING:
 		return String{Value: token.Value}, nil
 	case INTEGER:

@@ -29,7 +29,7 @@ func TestCorrectlyParsedJSONInputToAST(t *testing.T) {
 
 	assert.IsType(t, json.Object{}, ast.Get())
 	rootObjProps := ast.Get().(json.Object)
-	assert.Equal(t, 8, len(rootObjProps.Properties))
+	assert.Equal(t, 9, len(rootObjProps.Properties))
 
 	testObject(t, rootObjProps)
 	testString(t, rootObjProps)
@@ -39,6 +39,7 @@ func TestCorrectlyParsedJSONInputToAST(t *testing.T) {
 	testObjectArray(t, rootObjProps)
 	testEmptyArray(t, rootObjProps)
 	testEmptyObject(t, rootObjProps)
+	testNull(t, rootObjProps)
 }
 
 func testObject(t *testing.T, rootObjProps json.Object) {
@@ -151,4 +152,12 @@ func testEmptyObject(t *testing.T, rootObjProps json.Object) {
 
 	p := o.Get().(json.Object).Properties
 	assert.Equal(t, 0, len(p))
+}
+
+func testNull(t *testing.T, rootObjProps json.Object) {
+	null := rootObjProps.Properties["test_null"]
+	assert.IsType(t, json.Null{}, null)
+
+	o := null.(json.Null).Get()
+	assert.IsType(t, json.Null{}, o)
 }

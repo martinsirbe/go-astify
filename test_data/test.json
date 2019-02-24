@@ -25,5 +25,6 @@
     }
   ],
   "test_empty_array": [],
-  "test_empty_object": {}
+  "test_empty_object": {},
+  "test_null": null
 }

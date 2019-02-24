@@ -5,6 +5,14 @@ type Node interface {
 	Get() interface{}
 }
 
+// Null represents a null node
+type Null struct{}
+
+// Get implements Node interface
+func (n Null) Get() interface{} {
+	return n
+}
+
 // String represents a string node
 type String struct {
 	Value string

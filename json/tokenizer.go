@@ -14,6 +14,8 @@ const (
 	COLON
 	// COMMA identifies a comma separator
 	COMMA
+	// NULL identifies a null literal
+	NULL
 	// STRING identifies a string literal
 	STRING
 	// INTEGER identifies an integer literal
@@ -56,6 +58,7 @@ func (tt TokenType) String() string {
 		"eof",
 		"colon",
 		"comma",
+		"null",
 		"string",
 		"integer",
 		"boolean",
@@ -128,6 +131,8 @@ func (t *Tokenizer) getToken() Token {
 		return Token{Type: LSBRACKET, Value: string(leftSquareBracketTokenValue)}
 	case t.currentChar == rightSquareBracketTokenValue:
 		return Token{Type: RSBRACKET, Value: string(rightSquareBracketTokenValue)}
+	case t.isNull():
+		return Token{Type: NULL, Value: ""}
 	case t.isString():
 		return Token{Type: STRING, Value: stringTokenValue}
 	case t.isInteger():
@@ -170,6 +175,19 @@ func (t *Tokenizer) getBooleanValue() string {
 
 func (t *Tokenizer) isLastChar() bool {
 	return t.end >= len(t.charsIn)
+}
+
+func (t *Tokenizer) isNull() bool {
+	if t.currentChar != 'n' && t.start+4 <= len(t.charsIn) {
+		return false
+	}
+
+	if string(t.charsIn[t.start:t.start+4]) == "null" {
+		t.end += 4
+		t.currentChar = t.charsIn[t.end]
+		return true
+	}
+	return false
 }
 
 func (t *Tokenizer) isBoolean() bool {

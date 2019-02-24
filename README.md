@@ -1,4 +1,4 @@
-# GoASTify
+# Go ASTify
   
 An Abstract Syntax Tree parser written in Go.
   
@@ -9,6 +9,7 @@ parsing needs. Currently only JSON parsing is supported, however feel free to co
   
 ## JSON
 Parsing to the AST supports the following nodes based on the JSON syntax:  
+- [x] Null
 - [x] String
 - [x] Integer
 - [x] Boolean
@@ -38,8 +39,8 @@ go test -v -cover ./...
 === RUN   TestWhenPreviewingNextTokenDoesNotAdvanceToNextToken
 --- PASS: TestWhenPreviewingNextTokenDoesNotAdvanceToNextToken (0.00s)
 PASS
-coverage: 87.6% of statements
-ok      github.com/martinsirbe/go-astify/json   (cached)        coverage: 87.6% of statements
+coverage: 88.6% of statements
+ok      github.com/martinsirbe/go-astify/json   (cached)        coverage: 88.6% of statements
 ?       github.com/martinsirbe/go-astify/json/example   [no test files]
 ```
   
